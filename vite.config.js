@@ -16,5 +16,4 @@ export default defineConfig({
   css: {
     devSourcemap: true
   },
-  base: 'https://abdulla-807.github.io/films/dist/'
 })

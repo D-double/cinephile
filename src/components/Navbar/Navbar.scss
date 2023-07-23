@@ -7,6 +7,18 @@
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   
+  &__burger {
+    background: none;
+    border: none;
+    outline: none;
+    display: none;
+    color: #fff;
+    font-size: 20px;
+    @include media($sm) {
+      display: inline-block;
+    }
+  }
+  
   &__nav {
     display: flex;
     align-items: center;
@@ -16,6 +28,21 @@
   &__menu {
     display: flex;
     align-items: center;
+    @include media($sm) {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 200px;
+      background: rgba(20, 20, 20, 0.5);
+      flex-direction: column;
+      align-items: stretch;
+      transform: scaleY(0);
+      transform-origin: 0 0;
+      transition: 0.5s;
+      &.active {
+        transform: scaleY(1);
+      }
+    }
   }
 
   &__link {
@@ -27,7 +54,12 @@
     display: block;
     position: relative;
     transition: 0.5s;
-    
+    @include media($sm){
+      margin-left: 0;
+      padding: 10px 35px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  
     &::after {
       content: '';
       position: absolute;
@@ -41,6 +73,13 @@
       margin: 0 auto;
       transition: 0.5s;
       transform: scale(0);
+      @include media($sm){
+        margin: auto 0;
+        top: 0;
+        bottom: 0;
+        left: 10px;
+      }
+  
     }
     
     &:hover, &.active  {

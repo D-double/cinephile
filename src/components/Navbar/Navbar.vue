@@ -4,7 +4,10 @@
       <router-link class="logo" to="/">
         <img src="@/assets/img/logo.svg" alt="" class="logo__img">
       </router-link>
-      <ul class="header__menu">
+      <button @click="burger = !burger" class="header__burger"> 
+        <font-awesome-icon :icon="['fas', 'bars']" size="lg" />
+      </button>
+      <ul class="header__menu" :class="{active: burger}" @click="burger=false">
         <li v-for="(item, index) in links" :key="index">
           <router-link :to="item.url" class="header__link">{{ item.title }}</router-link>
         </li>
@@ -23,9 +26,10 @@
 import { ref } from 'vue'
 const links = ref([
   { title: "Главная", url: "/" },
-  { title: "Фильмы", url: "/movie" },
-  { title: "Сериалы", url: "/tv" },
+  { title: "Фильмы", url: "/films" },
+  { title: "Сериалы", url: "/serials" },
 ])
+const burger = ref(false)
 </script>
 
 <style lang="scss" scoped></style>

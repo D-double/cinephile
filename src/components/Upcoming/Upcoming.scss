@@ -1,0 +1,120 @@
+.upcoming {
+  &__item {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+  }
+
+  &__bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: relative;
+    background: rgba(20, 20, 20, 0.76);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 12px;
+    gap: 50px;
+    
+    @include media($md){
+      gap: 30px;
+    }
+  }
+  
+  &__title {
+    font-size: 80px;
+    @include media(1600px){
+      font-size: 60px;
+    }
+    @include media(){
+      font-size: 50px;
+    }
+    @include media($md){
+      font-size: 40px;
+    }
+    @include media($sm){
+      font-size: 30px;
+      -webkit-line-clamp: unset;
+    }
+  }
+
+  &__desc {
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 960px;
+    @include media($md){
+      font-size: 16px;
+    }
+  }
+  
+  &__next {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 576px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+
+    &-img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 50%;
+      object-fit: cover;
+    }
+
+    &-content {
+      position: relative;
+      background: linear-gradient(90deg, #000000 55.64%, rgba(0, 0, 0, 0) 100%);
+      width: 100%;
+      padding: 15px 15px 30px 15px;
+      text-align: left;
+    }
+
+    &-name {
+      margin-bottom: 15px;
+    }
+    
+    &-title {
+      font-size: 18px;
+    }
+
+    &-line {
+      background: rgba(255, 255, 255, 0.5);
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        background: #fff;
+        // width: 20%;
+        height: 100%;
+        animation: time 5s linear;
+      }
+    }
+  }
+}
+
+@keyframes time {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
