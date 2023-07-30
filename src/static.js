@@ -1,1 +1,7 @@
-export const apiKey = '59628cadadf0fbac1e79ad44653dc232';
+export const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OTYyOGNhZGFkZjBmYmFjMWU3OWFkNDQ2NTNkYzIzMiIsInN1YiI6IjYzOWMzNGFmODFhN2ZjMDBhMjY0MTRiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5C10QBpt4J1DB-rJwd5nyuVwtuCL4zXuPKtlBj2GhtA'
+  }
+};
