@@ -1,4 +1,7 @@
 .upcoming {
+  overflow: hidden;
+  position: relative;
+
   &__item {
     position: relative;
     min-height: 100vh;
