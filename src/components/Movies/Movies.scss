@@ -1,0 +1,92 @@
+.swiper {
+  padding: 0 100px;
+
+  @include media($sm) {
+    padding: 0 50px;
+  }
+  
+
+  // &-button-next,
+  // &-button-prev {
+  //   background: linear-gradient(270deg, rgba(20, 20, 20, 0.9) 0%, rgba(20, 20, 20, 0.6) 36.46%, rgba(20, 20, 20, 0.149846) 91.67%, rgba(20, 20, 20, 0) 100%);
+  //   height: 100%;
+  //   width: 100px;
+  //   top: 0;
+  //   right: 0;
+  //   color: #fff;
+
+  //   @include media($sm) {
+  //     display: none;
+  //   }
+
+  //   &::after {
+  //     font-size: 26px;
+  //     font-weight: 700;
+  //   }
+
+  //   &.swiper-button-disabled {
+  //     opacity: 0;
+  //   }
+  // }
+
+  // &-button-prev {
+  //   background: linear-gradient(88.67deg, rgba(20, 20, 20, 0.9) 1.08%, rgba(20, 20, 20, 0.6) 36.72%, rgba(20, 20, 20, 0.149846) 90.68%, rgba(20, 20, 20, 0) 98.82%);
+  //   right: auto;
+  //   left: 0;
+  // }
+
+}
+
+// swiper-container::part(button-prev) {
+//   background: linear-gradient(270deg, rgba(20, 20, 20, 0.9) 0%, rgba(20, 20, 20, 0.6) 36.46%, rgba(20, 20, 20, 0.149846) 91.67%, rgba(20, 20, 20, 0) 100%);
+//   height: 100%;
+//   width: 100px;
+//   top: 0;
+//   right: 0;
+//   color: #fff;
+// }
+// swiper-container::part(button-prev) svg {
+//   height: 23px;
+// }
+
+
+.movies {
+  &__item {
+    height: 462px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px #000000;
+    margin-bottom: 25px;
+
+    @include media($sm) {
+      height: auto;
+    }
+
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  &__icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+
+}
