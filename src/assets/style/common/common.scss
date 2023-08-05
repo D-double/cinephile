@@ -112,3 +112,21 @@ body {
   0%{ transform: rotate(0deg);}
   100%{ transform: rotate(360deg);}
 }
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 25px 0 42px 100px;
+  display: flex;
+  align-items: center;
+  width: max-content; 
+
+  @include media($sm){
+    padding-left: 50px;
+  }
+
+  &__icon {
+    font-size: 27px;
+    margin-left: 10px;
+  }
+}

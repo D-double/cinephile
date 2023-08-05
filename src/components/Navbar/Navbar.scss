@@ -6,6 +6,10 @@
   background: rgba(20, 20, 20, 0.5);
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  &.color {
+    background: #000;
+  }
+
   
   &__burger {
     background: none;

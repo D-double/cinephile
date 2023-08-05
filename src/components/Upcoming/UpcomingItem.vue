@@ -1,7 +1,7 @@
 <template>
   <Transition name="upcoming-item" mode="out-in">
   <div class="upcoming__item" v-if="slideView == index">
-    <img :src="imgUrLFull + movie.backdrop_path" alt="" class="upcoming__bg">
+    <img v-lazy="imgUrLFull + movie.backdrop_path" alt="" class="upcoming__bg">
     <div class="upcoming__content">
       <h1 class="upcoming__title text-limit">{{ movie.title }}</h1>
       <p class="upcoming__desc text-limit">{{ movie.overview }}</p>

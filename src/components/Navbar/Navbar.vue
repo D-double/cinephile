@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{color: scrollDown > 0}">
     <nav class="header__nav container">
       <router-link class="logo" to="/">
         <img src="@/assets/img/logo.svg" alt="" class="logo__img">
@@ -30,6 +30,12 @@ const links = ref([
   { title: "Сериалы", url: "/serials" },
 ])
 const burger = ref(false)
+const scrollDown = ref(0)
+
+window.addEventListener('scroll', ()=>{
+  scrollDown.value = window.scrollY  
+})
+
 </script>
 
 <style lang="scss" scoped></style>

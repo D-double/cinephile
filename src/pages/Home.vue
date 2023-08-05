@@ -1,13 +1,13 @@
 <template>
   <div>
     <Upcoming/>
-    <Movies/>
+    <Content/>
   </div>
 </template>
 
 <script setup>
 import Upcoming from '@/components/Upcoming/Upcoming.vue';
-import Movies from '@/components/Movies/Movies.vue';
+import Content from '@/components/Content/Content.vue';
 </script>
 
 <style lang="scss" scoped>
