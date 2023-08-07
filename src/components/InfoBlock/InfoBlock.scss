@@ -1,8 +1,18 @@
 .info {
-  min-height: 700px;
+  min-height: 0;
   position: relative;
   background: #000;
   display: flex;
+  transition: 0.5s;
+  height: 0;  
+  overflow: hidden;
+
+  &.active {
+    min-height: 700px;
+    height: auto;
+    transform: scaleY(1);
+  }
+
   
   &__wrapper {
     background: #fff;

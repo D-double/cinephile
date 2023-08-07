@@ -43,6 +43,10 @@
   import { imgUrl } from '@/static'
   import InfoBlock from '../InfoBlock/InfoBlock.vue'
   
+  import { useMovies } from "@/store/movies";
+  let moviesStore = useMovies();
+
+  
   let modules = ref([Navigation]);
   let popularStore = usePopular();
   let breakpoints = {
@@ -66,10 +70,12 @@
 
   popularStore.getPopular();
   const content = computed(() => popularStore.list)
-  // console.log(content);
-function getInfo(item){
-  console.log(item);
-  current.value = item
+  
+async function getInfo(item){
+  current.value = null;
+  await moviesStore.getMovie(item.id)
+  current.value = moviesStore.movie
+  console.log(current.value);
 }
 
 
