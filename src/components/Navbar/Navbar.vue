@@ -1,6 +1,6 @@
 <template>
-  <header class="header" :class="{color: scrollDown > 0}">
-    <nav class="header__nav container">
+  <header id="headerId" class="header" :class="{color: scrollDown > 0}">
+    <nav class="header__nav container" >
       <router-link class="logo" to="/">
         <img src="@/assets/img/logo.svg" alt="" class="logo__img">
       </router-link>
@@ -26,8 +26,8 @@
 import { ref } from 'vue'
 const links = ref([
   { title: "Главная", url: "/" },
-  { title: "Фильмы", url: "/films" },
-  { title: "Сериалы", url: "/serials" },
+  { title: "Фильмы", url: "/movie" },
+  { title: "Сериалы", url: "/tv" },
 ])
 const burger = ref(false)
 const scrollDown = ref(0)
