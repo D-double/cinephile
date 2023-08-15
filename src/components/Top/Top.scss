@@ -12,6 +12,11 @@
     margin-bottom: 88px;
     display: flex;
     align-items: center;
+    @include media($sm) {
+      margin-left: 50px;
+      margin-bottom: 30px;
+    }
+  
   }
 
   &__subtitle {
@@ -31,6 +36,14 @@
     margin-bottom: 60px;
     position: relative;
     overflow: hidden;
+    @include media($sm){
+      height: 350px;
+      margin-bottom: 20px;
+    }
+    @include media(400px){
+      height: 250px;
+    }
+  
   }
 
   &__img {
@@ -53,6 +66,12 @@
     padding-left: 80px;
     display: flex;
     align-items: center;
+
+    @include media($sm){
+      font-size: 100px;
+      padding-left: 40px;
+    }
+  
   }
 
   .swiper-button-next, .swiper-button-prev {

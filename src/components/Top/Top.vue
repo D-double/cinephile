@@ -1,5 +1,6 @@
 <template>
-  <section class="rate">
+  <Transition name="movies">
+  <section class="rate" v-if="content.length > 0">
     <h2 class="rate__title">
       ТОП
       <span class="rate__subtitle">10</span>
@@ -13,6 +14,10 @@
       </swiper-slide>
     </swiper>
   </section>
+  <div class="loading" v-else>
+    <div class="loading__spiner"></div>
+  </div>
+  </Transition>
 </template>
 
 <script setup>
@@ -20,26 +25,31 @@ import { computed, ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
 import { imgUrl } from '@/static'
+import { useTop } from "@/store/topRate";
+let topStore = useTop();
+topStore.getTop();
+const content = computed(() => topStore.moviesList)
 
 let modules = ref([Navigation]);
 let breakpoints = {
-  200: {
-    slidesPerView: 1.5
-  },
-  576: {
-    slidesPerView: 2.5
-  },
-  992: {
-    slidesPerView: 3.5
-  },
-  1320: {
-    slidesPerView: 4.5
-  },
-  1600: {
-    slidesPerView: 5.5
-  },
+  200: {  slidesPerView: 1  },
+  576: {  slidesPerView: 2  },
+  1100: {  slidesPerView: 2.5  },
+  1320: {  slidesPerView: 3  },
+  1600: {  slidesPerView: 3.2  },
 }
 
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+  .movies-enter-active, .movies-leave-active {
+    transition: 0.5s linear;
+  }
+  .movies-enter-from {
+    opacity: 0;
+  }
+  .movies-enter-to {
+    opacity: 1;
+  } 
+
+</style>
