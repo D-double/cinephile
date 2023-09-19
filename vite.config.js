@@ -16,5 +16,5 @@ export default defineConfig({
   css: {
     devSourcemap: true
   },
-  base: './'
+  base: 'https://d-double.github.io/cinephile/dist/'
 })

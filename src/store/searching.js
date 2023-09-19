@@ -14,7 +14,7 @@ async getSearch(page=1){
     const data = await result.json();
     this.totalPages = data.total_pages;
     const arrayWithPhoto = data.results.filter(movie => movie.poster_path != null)
-    console.log(data);
+    // console.log(data);
     if (page > 1) {
       this.searchArray.push(...arrayWithPhoto);
     } else {

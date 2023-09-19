@@ -28,7 +28,7 @@
   const loading = ref(false)
   popularStore.getPopular(props.type, currentPage.value)
   const content = computed(() => props.type == 'movie' ? popularStore.moviesList : popularStore.tvsList)
-  console.log(content);
+  // console.log(content);
   let allContent = ref([])
   async function getContent() {
     if (!loading.value) {
