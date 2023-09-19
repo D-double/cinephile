@@ -7,9 +7,9 @@ state: () => ({
   tvsList: [],
 }),
   actions: { 
-    async getPopular(type){
+    async getPopular(type, page=1){
       try {
-        const result = await fetch(`https://api.themoviedb.org/3/${type}/popular?language=ru&page=1`, options);
+        const result = await fetch(`https://api.themoviedb.org/3/${type}/popular?language=ru&page=${page}`, options);
         const data = await result.json();
         // console.log(data);
         const arrayWithPhoto = data.results.filter(movie => movie.poster_path != null)

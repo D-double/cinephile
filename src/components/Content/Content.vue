@@ -6,8 +6,10 @@
         <font-awesome-icon :icon="['fas', 'chevron-right']" class="title__icon" />
       </router-link>
       <swiper :modules="modules" :slides-per-view="5.5" :space-between="24" navigation :breakpoints="breakpoints">
-        <swiper-slide class="content__item" v-for="(item, index) in content" :key="index" @click="getInfo(item)">
+        <swiper-slide class="content__item" 
+        v-for="(item, index) in content" :key="index" @click="getInfo(item)">
           <img v-lazy="imgUrl + item.poster_path" alt="" class="content__img">
+          <router-link :to=" `/${type}/${item.id}` " class="content__media-link"></router-link>
         </swiper-slide>
         <swiper-slide class="content__item">
           <router-link :to=" '/' + type " class="content__link">
@@ -18,7 +20,7 @@
 
       </swiper>
       <div ref="inf">
-        <InfoBlock  :current="current" :open="open" @close="close" />
+        <InfoBlock :current="current" :open="open" @close="close" :page="type" />
       </div>
     </section>
     <div class="loading" v-else>
@@ -77,7 +79,7 @@ async function getInfo(item) {
     behavior: 'smooth'
   })
   open.value = true;
-  console.log(current.value);
+  // console.log(current.value);
 }
 
 function close() {

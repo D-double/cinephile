@@ -7,6 +7,10 @@
   height: 0;  
   overflow: hidden;
 
+  @include media(900px){
+    display: none;
+  }
+
   &.active {
     min-height: 700px;
     height: auto;

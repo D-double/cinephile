@@ -9,8 +9,13 @@ const router = createRouter({
     {path: '/movie', name: 'movies', component: ()=> import('@/pages/Films.vue')},
     {path: '/search', name: 'search', component: ()=> import('@/pages/Search.vue')},
     {path: '/tv', name: 'tvs', component: ()=> import('@/pages/Serials.vue')},
+    {path: '/movie/:id', name: 'movieid', component: ()=> import('@/pages/FilmId.vue')},
+    {path: '/tv/:id', name: 'tvid', component: ()=> import('@/pages/SerialId.vue')},
   ],
-  linkActiveClass: 'active'
+  linkActiveClass: 'active',
+  scrollBehavior() {  
+    return { top: 0 }
+  },
 })
 
 export default router;

@@ -5,7 +5,7 @@
     <div class="upcoming__content">
       <h1 class="upcoming__title text-limit">{{ movie.title }}</h1>
       <p class="upcoming__desc text-limit">{{ movie.overview }}</p>
-      <BtnMore />
+      <BtnMore :id="movie.id"/>
     </div>
     <div class="upcoming__next" @click="$emit('nextSlide')">
       <img :src="imgUrl + next.backdrop_path" alt="" class="upcoming__next-img">

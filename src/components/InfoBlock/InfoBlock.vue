@@ -16,9 +16,9 @@
             {{ new Date(0, 0, 0, 0, current.runtime).getMinutes() }}m</span>
         </p>
         <div class="info__actors">
-          <Actors/>
+          <Actors :type="page" :id="current.id" :count="4"/>
         </div>
-        <BtnMore/>
+        <BtnMore :id="current.id" :page="page"/>
       </div>
     </div>
     </Transition>
@@ -28,7 +28,7 @@
 
 <script setup>
 import { imgUrLFull } from '@/static'
-const props = defineProps(['current', 'open'])
+const props = defineProps(['current', 'open', 'page'])
 
 </script>
 

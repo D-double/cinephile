@@ -14,6 +14,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(fas, far, fab)
 import BtnMore from '@/components/UI/BtnMore.vue';
 import Actors from '@/components/UI/Actors.vue';
+import Trailer from '@/components/UI/Trailer.vue';
 import errorImage from './assets/img/no-image.png'
 
 const pinia = createPinia()
@@ -27,4 +28,5 @@ app.use(VueLazyload, {
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.component('BtnMore', BtnMore)
 app.component('Actors', Actors)
+app.component('Trailer', Trailer)
 app.mount('#app')
