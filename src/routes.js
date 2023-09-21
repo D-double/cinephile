@@ -16,7 +16,7 @@ const router = createRouter({
   scrollBehavior() {  
     return { top: 0 }
   },
-  fullPath: 'https://d-double.github.io/cinephile/dist/'
+  fullPath: '/cinephile/'
 })
 
 export default router;
