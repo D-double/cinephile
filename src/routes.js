@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 // there is also createWebHashHistory and createMemoryHistory
 import Home from '@/pages/Home.vue';
 let aliasGithub = '/cinephile';
 const router = createRouter({
-  history: createWebHistory(),
+  // history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {path: '/', name: 'home', component: Home, alias: aliasGithub },
     {path: '/movie', name: 'movies', component: ()=> import('@/pages/Films.vue'), alias: aliasGithub + '/movie' },
