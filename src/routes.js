@@ -5,7 +5,7 @@ import Home from '@/pages/Home.vue';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    {path: '/', name: 'home', component: Home},
+    {path: '/', name: 'home', component: Home, alias: '/cinephile' },
     {path: '/movie', name: 'movies', component: ()=> import('@/pages/Films.vue')},
     {path: '/search', name: 'search', component: ()=> import('@/pages/Search.vue')},
     {path: '/tv', name: 'tvs', component: ()=> import('@/pages/Serials.vue')},
@@ -16,7 +16,7 @@ const router = createRouter({
   scrollBehavior() {  
     return { top: 0 }
   },
-  fullPath: '/cinephile/'
+  fullPath: '/cinephile'
 })
 
 export default router;
