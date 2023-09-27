@@ -1,5 +1,5 @@
 <template>
-  <router-link to="" class="search__item">
+  <router-link :to="`/${item.media_type}/${item.id}`" class="search__item">
     <img v-lazy="imgUrl + item.poster_path" alt="" class="search__img">
     <h2 class="search__name">{{ item.title || item.name }}</h2>
   </router-link>

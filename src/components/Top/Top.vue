@@ -6,12 +6,14 @@
       <span class="rate__subtitle">10</span>
     </h2>
     <swiper :modules="modules" :slides-per-view="5.5" :space-between="24" navigation :breakpoints="breakpoints">
-      <swiper-slide class="rate__item" v-for="(item, index) in content" :key="index">
-        <img v-lazy="imgUrl + item.poster_path" alt="" class="rate__img">
-        <div class="rate__content">
-          <p>{{ index + 1 }}</p>
-        </div>
-      </swiper-slide>
+<swiper-slide class="rate__item" v-for="(item, index) in content" :key="index">
+  <router-link :to="'/movie/' + item.id ">
+    <img v-lazy="imgUrl + item.poster_path" alt="" class="rate__img">
+    <div class="rate__content">
+      <p>{{ index + 1 }}</p>
+    </div>
+  </router-link>
+</swiper-slide>
     </swiper>
   </section>
   <div class="loading" v-else>
