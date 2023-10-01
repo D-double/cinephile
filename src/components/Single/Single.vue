@@ -1,9 +1,14 @@
 <template>
-<div class="single">
+  <Transition name="upcoming">
+<div class="single" v-if="getInfoId">
   <SingleContent :type="props.type" :current="getInfoId" />
   <Additional :current="getInfoId" />
   <Recommend :type="props.type" :recommend="getRecommend"/>
 </div>
+<div class="loading" v-else>
+    <div class="loading__spiner"></div>
+  </div>
+</Transition>
 </template>
 
 <script setup>
@@ -32,8 +37,10 @@ let getRecommend = computed(()=> recommendStore.info);
 
 let routeId = computed(()=> route.params.id);
 watch(routeId, () => { 
-  detailsStore.getDetails(route.params.id, props.type)
-  recommendStore.getRecommend(route.params.id, props.type)
+  if (routeId.value) {
+    detailsStore.getDetails(route.params.id, props.type)
+    recommendStore.getRecommend(route.params.id, props.type)    
+  }
 })
 
 

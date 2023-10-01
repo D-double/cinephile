@@ -1,5 +1,5 @@
 <template>
-  <div class="actor" v-for="(item, index) in getActors" :key="index">
+  <div class="actor" v-if="getActors" v-for="(item, index) in getActors" :key="index">
     <img v-if="item.profile_path" :src="imgUrl + item.profile_path" alt="" class="actor__img">
     <span class="actor__name">{{ item.name }}</span>
   </div>

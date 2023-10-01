@@ -9,7 +9,7 @@
         {{ new Date(current.release_date).getFullYear() ||
           new Date(current.first_air_date).getFullYear() 
         }}, 
-        {{ current.genres.map( item => item.name).join(', ') }}
+        {{ Array.isArray(current.genres) ? current.genres.map( item => item.name).join(', ') : '' }}
         <span v-if="current.runtime" class="single__time">
           {{ new Date(0, 0, 0, 0, current.runtime).getHours() }}h 
           {{ new Date(0, 0, 0, 0, current.runtime).getMinutes() }}m
