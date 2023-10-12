@@ -6,10 +6,11 @@
         <font-awesome-icon :icon="['fas', 'chevron-right']" class="title__icon" />
       </router-link>
       <swiper :modules="modules" :slides-per-view="5.5" :space-between="24" navigation :breakpoints="breakpoints">
-        <swiper-slide class="content__item" 
-        v-for="(item, index) in content" :key="index" @click="getInfo(item)">
+        <swiper-slide class="content__item" :class="{active: index == selected}"
+        v-for="(item, index) in content" :key="index" @click="getInfo(item, index)">
           <img v-lazy="imgUrl + item.poster_path" alt="" class="content__img">
           <router-link :to=" `/${type}/${item.id}` " class="content__media-link"></router-link>
+          <div class="content__arrow"></div>
         </swiper-slide>
         <swiper-slide class="content__item">
           <router-link :to=" '/' + type " class="content__link">
@@ -68,9 +69,11 @@ const props = defineProps(['type'])
 popularStore.getPopular(props.type);
 const content = computed(() => props.type == 'movie' ? popularStore.moviesList : popularStore.tvsList)
 let inf = ref();
+let selected = ref(null)
 
-async function getInfo(item) {
+async function getInfo(item, a) {
   current.value = null;
+  selected.value = a;
   await detailsStore.getDetails(item.id, props.type)
   current.value = detailsStore.info;
   let infTop = inf.value.offsetTop;
@@ -79,12 +82,13 @@ async function getInfo(item) {
     behavior: 'smooth'
   })
   open.value = true;
-  // console.log(current.value);
+  console.log(a);
 }
 
 function close() {
   open.value = false;
   current.value = null;
+  selected.value = null;
 }
 
 

@@ -20,8 +20,8 @@ import errorImage from './assets/img/no-image.png'
 const pinia = createPinia()
 const app = createApp(App)
 
-app.use(routers)
 app.use(pinia)
+app.use(routers)
 app.use(VueLazyload, {
   error: errorImage
 })

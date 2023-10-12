@@ -1,6 +1,7 @@
 // Импортируйте нужные вам функции из нужных вам SDK
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getDatabase } from "firebase/database";
 // ЗАДАЧА: добавьте SDK для продуктов Firebase, которые вы хотите использовать
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -13,7 +14,8 @@ const firebaseConfig = {
   storageBucket: "cinephile-6a58f.appspot.com",
   messagingSenderId: "904319273342",
   appId: "1:904319273342:web:83fd65877376b599988b2f",
-  measurementId: "G-R1EL8LRLNT"
+  measurementId: "G-R1EL8LRLNT",
+  databaseURL: "https://cinephile-6a58f-default-rtdb.firebaseio.com",
 };
 
 // Инициализируем Firebase

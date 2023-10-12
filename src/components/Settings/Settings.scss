@@ -1,19 +1,10 @@
-.enter {
+.settings {
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 130px;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 15px;
-
-  &__change {
-    color: #149A03;
-    font-size: 16px;
-    text-decoration: underline;
-    font-style: italic;
-    cursor: pointer;
-  }
+  gap: 30px;
 
   &__form {
     display: flex;
@@ -28,6 +19,7 @@
 
   &__label {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     gap: 20px;
@@ -49,6 +41,27 @@
     }
   }
 
+  &__file {
+    display: none;
+  }
+
+  &__upload {
+    background: #149A03;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-transform: uppercase;
+
+    span {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__img {
+    max-width: 150px;
+  }
+
   &__submit {
     border: none;
     outline: none;
@@ -60,11 +73,5 @@
     border-radius: 5px;
     text-transform: uppercase;
     font-weight: 700;
-  }
-
-  &__confirm {
-    font-size: 14px;
-    font-style: italic;
-    color: #f00;
   }
 }

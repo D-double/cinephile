@@ -16,6 +16,6 @@ export default defineConfig({
   css: {
     devSourcemap: true
   },
-  base: '/cinephile/',
-  publicDir: '/cinephile/'
+  // base: '/cinephile/',
+  // publicDir: '/cinephile/'
 })
