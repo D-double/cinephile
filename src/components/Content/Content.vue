@@ -82,7 +82,6 @@ async function getInfo(item, a) {
     behavior: 'smooth'
   })
   open.value = true;
-  console.log(a);
 }
 
 function close() {

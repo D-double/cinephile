@@ -18,6 +18,7 @@
     display: none;
     color: #fff;
     font-size: 20px;
+    margin-left: auto;
     @include media($sm) {
       display: inline-block;
     }
@@ -108,6 +109,7 @@
     overflow: hidden;
     padding: 0 12px 12px 12px;
   }
+  
   &__error {
     max-width: 500px;
     width: 100%;
@@ -135,6 +137,62 @@
 
     p {
       color: #fff;
+    }
+  }
+
+  &__user {
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 30px;
+    @include media($sm) {
+      color: #fff;
+    }
+    
+    &-icon {
+      padding: 25px 0;
+      font-size: 25px;
+    }
+
+    &-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+      background: rgba(20, 20, 20, 0.8);
+      transform: scaleY(0);
+      transform-origin: 0 0;
+      transition: 0.5s;
+
+      &.active {
+        transform: scaleY(1);
+      }
+    }
+
+    &-link {
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 10px 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      display: grid;
+      grid-template-columns: 35px max-content;
+      place-items: center;
+      gap: 10px;
+      transition: 0.5s;
+
+      &:hover {
+        background: rgba(20, 20, 20, 0.8);
+        color: #fff;
+      }
+    }
+
+    &-img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.6);
     }
   }
 }

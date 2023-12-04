@@ -94,6 +94,14 @@ body {
   height: 100vh;
   position: absolute;
   width: 100%;
+  &_sm {
+    height: auto;
+    position: relative;
+  }
+  &_rel {
+    // height: auto;
+    position: relative;
+  }
 
 
   &__spiner {

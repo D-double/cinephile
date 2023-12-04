@@ -75,3 +75,65 @@
     font-weight: 700;
   }
 }
+
+.user-photos {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 20px;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  &__form {
+    display: flex;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  &__input {
+    display: none;
+  }
+  
+  &__upload {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  &__select, &__btn {
+    @extend .settings__submit;
+  }
+  
+  &__btn_red {
+    background: red;
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  &__card {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #000;
+  }
+}
